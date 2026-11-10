@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&amp;display=swap" rel="stylesheet">
+</helmet>
+<div ref="{{ rootRef }}" data-no-i18n="1" style="position: relative; width: 100%; aspect-ratio: 1200 / 760; overflow: hidden; background: #f7f7f7; font-family: 'Nunito Sans', system-ui, sans-serif; color: #141414; user-select: none;">
+  <div style="{{ stageStyle }}"><div style="{{ camStyle }}">
+    <div style="position: absolute; left: 0; top: 0; width: 1200px; height: 56px; background: #ffffff; border-bottom: 1px solid #dfe0e1; display: flex; align-items: center; padding: 0 20px; gap: 14px; box-sizing: border-box;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#606162" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+      <div style="width: 30px; height: 30px; border-radius: 6px; background: #e0edff; display: flex; align-items: center; justify-content: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0265dc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><path d="M9 13h6M9 17h4"></path></svg></div>
+      <div style="display: flex; flex-direction: column; gap: 1px;">
+        <span style="font-size: 14px; font-weight: 700;">Residential service invoice</span>
+        <span style="font-size: 11.5px; color: #606162;">Template · Draft · Saved just now</span>
+      </div>
+      <div style="position: absolute; left: 830px; top: 12px; width: 150px; height: 32px; border-radius: 6px; background: #f2f3f4; display: grid; grid-template-columns: 1fr 1fr; padding: 3px; box-sizing: border-box;">
+        <span style="{{ editBtn }}">Edit</span>
+        <span style="{{ prevBtn }}">Preview</span>
+      </div>
+      <span style="{{ pubStyle }}">Publish</span>
+      <span style="position: absolute; left: 1096px; top: 12px; height: 32px; padding: 0 12px; border-radius: 6px; border: 1px solid #dfe0e1; color: #141414; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; box-sizing: border-box;">Share</span>
+    </div>
+
+    <div style="position: absolute; left: 0; top: 56px; width: 260px; height: 704px; background: #ffffff; border-right: 1px solid #dfe0e1; box-sizing: border-box;"></div>
+    <div style="position: absolute; left: 18px; top: 72px; width: 224px; height: 32px; border-radius: 6px; background: #f2f3f4; display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 3px; box-sizing: border-box;">
+      <span style="{{ tabBlocks }}">Blocks</span>
+      <span style="{{ tabFields }}">Fields</span>
+      <span style="display: flex; align-items: center; justify-content: center; font-size: 12.5px; font-weight: 600; color: #606162;">Styles</span>
+    </div>
+    <div style="position: absolute; left: 18px; top: 116px; width: 224px; height: 34px; border-radius: 6px; border: 1px solid #dfe0e1; box-sizing: border-box; display: flex; align-items: center; gap: 8px; padding: 0 10px; color: #8b8c8d; font-size: 12.5px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>{{ searchPh }}</div>
+    <span style="position: absolute; left: 18px; top: 164px; font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #8b8c8d;">{{ sectionLabel }}</span>
+
+    <sc-if value="{{ isBuild }}" hint-placeholder-val="{{ true }}">
+      <div style="position: absolute; left: 18px; top: 186px; width: 224px; display: grid; grid-template-columns: 107px 107px; grid-auto-rows: 72px; gap: 10px;">
+        <div style="border: 1px solid #dfe0e1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12px; font-weight: 600;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#606162" stroke-width="1.8" stroke-linecap="round"><path d="M5 6h14M12 6v13M9 19h6"></path></svg>Text</div>
+        <div style="border: 1px solid #dfe0e1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12px; font-weight: 600;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#606162" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="15" rx="2"></rect><circle cx="9" cy="10" r="1.6"></circle><path d="M20 16l-5-5-8 8"></path></svg>Image</div>
+        <div style="border: 1px solid #dfe0e1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12px; font-weight: 600;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#606162" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.5 6.6 19.4l1.2-6L3.4 9.3l6-.7z"></path></svg>Logo</div>
+        <div style="border: 1px solid #dfe0e1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12px; font-weight: 600;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#606162" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20c1.2-3.6 3.8-5.5 7-5.5s5.8 1.9 7 5.5"></path></svg>Customer</div>
+        <div style="border: 1px solid #dfe0e1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12px; font-weight: 600;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#606162" stroke-width="1.8"><rect x="3.5" y="4.5" width="17" height="15" rx="2"></rect><path d="M3.5 9.5h17M3.5 14.5h17M10 9.5v10"></path></svg>Line items</div>
+        <div style="border: 1px solid #dfe0e1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12px; font-weight: 600;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#606162" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 5H7l5 7-5 7h10"></path></svg>Totals</div>
+        <div style="{{ sigTile }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c3-1 4-8 6-8s0 7 2 7 2-3 4-3 2 2 6 2"></path><path d="M3 21h18"></path></svg>Signature</div>
+        <div style="border: 1px solid #dfe0e1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12px; font-weight: 600;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#606162" stroke-width="1.8"><rect x="3" y="5.5" width="18" height="13" rx="2"></rect><path d="M3 10h18M7 15h3"></path></svg>Pay now</div>
+        <div style="border: 1px solid #dfe0e1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12px; font-weight: 600;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#606162" stroke-width="1.8" stroke-linecap="round"><path d="M4 12h16"></path></svg>Divider</div>
+        <div style="border: 1px solid #dfe0e1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12px; font-weight: 600;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#606162" stroke-width="1.8" stroke-linecap="round"><path d="M6 6h12M6 10h12M6 14h12M6 18h7"></path></svg>Terms</div>
+      </div>
+      <div style="position: absolute; left: 18px; top: 610px; width: 224px; display: flex; flex-direction: column; gap: 8px;">
+        <span style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #8b8c8d;">Saved sections</span>
+        <div style="height: 34px; border-radius: 6px; background: #f7f7f7; display: flex; align-items: center; padding: 0 10px; font-size: 12.5px; font-weight: 600; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #0265dc;"></span>Company header</div>
+        <div style="height: 34px; border-radius: 6px; background: #f7f7f7; display: flex; align-items: center; padding: 0 10px; font-size: 12.5px; font-weight: 600; gap: 8px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #1e9e5a;"></span>Warranty terms</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isFields }}" hint-placeholder-val="{{ false }}">
+      <div style="position: absolute; left: 18px; top: 186px; width: 224px; display: flex; flex-direction: column; gap: 6px;">
+        <sc-for list="{{ fieldRows }}" as="f" hint-placeholder-count="8">
+          <div style="{{ f.style }}">
+            <svg width="10" height="14" viewBox="0 0 10 14" fill="#b4b5b6"><circle cx="2.5" cy="2.5" r="1.3"></circle><circle cx="7.5" cy="2.5" r="1.3"></circle><circle cx="2.5" cy="7" r="1.3"></circle><circle cx="7.5" cy="7" r="1.3"></circle><circle cx="2.5" cy="11.5" r="1.3"></circle><circle cx="7.5" cy="11.5" r="1.3"></circle></svg>
+            <span style="flex: 1; font-size: 12.5px; font-weight: 600;">{{ f.label }}</span>
+            <span style="font-size: 11px; color: #8b8c8d;">{{ f.type }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <div style="position: absolute; left: 260px; top: 56px; width: 780px; height: 704px; background: #eceef1;"></div>
+    <span style="position: absolute; left: 415px; top: 70px; font-size: 11.5px; font-weight: 600; color: #606162;">Page 1 of 3 · Letter</span>
+    <div style="position: absolute; left: 590px; top: 716px; height: 30px; padding: 0 12px; border-radius: 15px; background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.12); display: flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 700; color: #606162;"><span>–</span><span style="color: #141414;">100%</span><span>+</span></div>
+
+    <div style="position: absolute; left: 415px; top: 92px; width: 470px; height: 608px; background: #ffffff; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 12px 32px -12px rgba(0,0,0,0.18); padding: 28px 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px; font-size: 10.5px;">
+      <div style="height: 44px; display: flex; justify-content: space-between; align-items: flex-start;">
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <div style="width: 34px; height: 34px; border-radius: 7px; background: #13315c; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px;">N</div>
+          <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 13px; font-weight: 800;">Northwind Heating &amp; Air</span><span style="font-size: 9.5px; color: #606162;">Lic. #TACLA-28841E · (512) 555-0147</span></div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px;"><span style="font-size: 17px; font-weight: 800; letter-spacing: 0.08em; color: #13315c;">INVOICE</span><span style="font-size: 9.5px; color: #606162;">INV-20418 · Oct 14, 2023</span></div>
+      </div>
+      <div style="height: 1px; background: #dfe0e1;"></div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; min-height: 72px;">
+        <div style="display: flex; flex-direction: column;">
+          <span style="font-size: 8.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #8b8c8d; height: 12px;">Bill to</span>
+          <div style="height: 20px; display: flex; align-items: center;"><span style="{{ tok.name.style }}">{{ tok.name.text }}</span></div>
+          <div style="{{ addrSlot }}">
+            <span style="{{ addrPh }}">Drop field here</span>
+            <span style="{{ addrChip }}"><span style="{{ tok.addr.style }}">{{ tok.addr.text }}</span></span>
+          </div>
+          <div style="height: 20px; display: flex; align-items: center;"><span style="{{ tok.phone.style }}">{{ tok.phone.text }}</span></div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <span style="font-size: 8.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #8b8c8d; height: 12px;">Service details</span>
+          <div style="height: 20px; display: flex; align-items: center; gap: 5px;"><span style="color: #606162;">Job</span><span style="{{ tok.job.style }}">{{ tok.job.text }}</span></div>
+          <div style="height: 20px; display: flex; align-items: center; gap: 5px;"><span style="color: #606162;">Technician</span><span style="{{ tok.tech.style }}">{{ tok.tech.text }}</span></div>
+          <div style="height: 20px; display: flex; align-items: center; gap: 5px;"><span style="color: #606162;">Due</span><span style="{{ tok.due.style }}">{{ tok.due.text }}</span></div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; border: 1px solid #ececed; border-radius: 4px; overflow: hidden;">
+        <div style="height: 24px; background: #f7f7f7; display: grid; grid-template-columns: 1fr 40px 64px 70px; align-items: center; padding: 0 10px; font-size: 8.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #8b8c8d;"><span>Description</span><span>Qty</span><span>Rate</span><span style="text-align: right;">Amount</span></div>
+        <div style="height: 28px; display: grid; grid-template-columns: 1fr 40px 64px 70px; align-items: center; padding: 0 10px; border-top: 1px solid #ececed;"><span style="font-weight: 600;">AC tune-up</span><span>2</span><span>$89.00</span><span style="text-align: right;">$178.00</span></div>
+        <div style="height: 28px; display: grid; grid-template-columns: 1fr 40px 64px 70px; align-items: center; padding: 0 10px; border-top: 1px solid #ececed;"><span style="font-weight: 600;">Run capacitor, 45/5 µF</span><span>1</span><span>$96.00</span><span style="text-align: right;">$96.00</span></div>
+        <div style="height: 28px; display: grid; grid-template-columns: 1fr 40px 64px 70px; align-items: center; padding: 0 10px; border-top: 1px solid #ececed;"><span style="font-weight: 600;">Labor</span><span>1.5 h</span><span>$95.00</span><span style="text-align: right;">$142.50</span></div>
+      </div>
+      <div style="align-self: flex-end; width: 190px; display: flex; flex-direction: column; gap: 4px;">
+        <div style="display: flex; justify-content: space-between; color: #606162;"><span>Subtotal</span><span>$416.50</span></div>
+        <div style="display: flex; justify-content: space-between; color: #606162;"><span>Tax 8.25%</span><span>$34.36</span></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #dfe0e1; padding-top: 6px; margin-top: 2px; font-size: 12px; font-weight: 800;"><span>Total due</span><span style="{{ tok.total.style }}">{{ tok.total.text }}</span></div>
+      </div>
+      <div style="{{ indStyle }}"><span style="position: absolute; left: -4px; top: -3px; width: 8px; height: 8px; border-radius: 50%; background: #0265dc;"></span><span style="position: absolute; right: -4px; top: -3px; width: 8px; height: 8px; border-radius: 50%; background: #0265dc;"></span></div>
+      <div style="{{ sigSlot }}">
+        <div style="{{ sigBox }}">
+          <div style="display: flex; flex-direction: column; gap: 6px; flex: 1;">
+            <span style="font-size: 8.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #8b8c8d;">Customer signature</span>
+            <div style="height: 22px; border-bottom: 1px solid #141414; display: flex; align-items: flex-end; padding-bottom: 2px; color: #b4b5b6; font-size: 10px;">Sign here</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px; width: 110px;">
+            <span style="font-size: 8.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #8b8c8d;">Date</span>
+            <div style="height: 22px; border-bottom: 1px solid #141414;"></div>
+          </div>
+          <div style="{{ selTools }}">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v18M3 12h18"></path></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"></path></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg>
+          </div>
+        </div>
+      </div>
+      <span style="margin-top: auto; font-size: 9.5px; color: #8b8c8d; text-align: center;">Thank you for choosing Northwind. Questions? billing@northwindair.com</span>
+    </div>
+
+    <div style="position: absolute; left: 1040px; top: 56px; width: 160px; height: 704px; background: #ffffff; border-left: 1px solid #dfe0e1; box-sizing: border-box;"></div>
+    <div style="position: absolute; left: 1056px; top: 72px; width: 128px; display: flex; justify-content: space-between; align-items: center;"><span style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #8b8c8d;">Pages</span><span style="font-size: 11px; font-weight: 700; color: #606162;">3</span></div>
+    <span style="position: absolute; left: 1058px; top: 104px; font-size: 11px; font-weight: 700; color: #0265dc;">1</span>
+    <div style="position: absolute; left: 1074px; top: 104px; width: 96px; height: 124px; border-radius: 3px; background: #ffffff; box-shadow: 0 0 0 2px #0265dc, 0 4px 12px -4px rgba(2,101,220,0.35); padding: 9px 8px; box-sizing: border-box; display: flex; flex-direction: column; gap: 5px;">
+      <div style="display: flex; justify-content: space-between;"><span style="width: 12px; height: 12px; border-radius: 3px; background: #13315c;"></span><span style="width: 26px; height: 5px; border-radius: 2px; background: #13315c; margin-top: 3px;"></span></div>
+      <span style="height: 3px; width: 60%; background: #e4e5e6; border-radius: 2px;"></span>
+      <span style="height: 3px; width: 45%; background: #e4e5e6; border-radius: 2px;"></span>
+      <span style="height: 22px; border-radius: 2px; border: 1px solid #ececed;"></span>
+      <span style="height: 3px; width: 40%; align-self: flex-end; background: #e4e5e6; border-radius: 2px;"></span>
+      <span style="{{ thumbSig }}"></span>
+    </div>
+    <span style="position: absolute; left: 1058px; top: 248px; font-size: 11px; font-weight: 700; color: #606162;">2</span>
+    <div style="position: absolute; left: 1074px; top: 248px; width: 96px; height: 124px; border-radius: 3px; background: #ffffff; box-shadow: 0 0 0 1px #dfe0e1; padding: 10px 8px; box-sizing: border-box; display: flex; flex-direction: column; gap: 4px;">
+      <span style="height: 5px; width: 50%; background: #13315c; border-radius: 2px; margin-bottom: 3px;"></span>
+      <span style="height: 3px; background: #e4e5e6; border-radius: 2px;"></span><span style="height: 3px; background: #e4e5e6; border-radius: 2px;"></span><span style="height: 3px; width: 80%; background: #e4e5e6; border-radius: 2px;"></span><span style="height: 3px; background: #e4e5e6; border-radius: 2px;"></span><span style="height: 3px; width: 65%; background: #e4e5e6; border-radius: 2px;"></span><span style="height: 3px; background: #e4e5e6; border-radius: 2px;"></span><span style="height: 3px; width: 75%; background: #e4e5e6; border-radius: 2px;"></span>
+    </div>
+    <span style="position: absolute; left: 1058px; top: 392px; font-size: 11px; font-weight: 700; color: #606162;">3</span>
+    <div style="position: absolute; left: 1074px; top: 392px; width: 96px; height: 124px; border-radius: 3px; background: #ffffff; box-shadow: 0 0 0 1px #dfe0e1; padding: 10px 8px; box-sizing: border-box; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 6px 1fr 1fr; gap: 5px;">
+      <span style="grid-column: 1 / -1; width: 55%; background: #13315c; border-radius: 2px;"></span>
+      <span style="background: #eceef1; border-radius: 2px;"></span><span style="background: #eceef1; border-radius: 2px;"></span><span style="background: #eceef1; border-radius: 2px;"></span><span style="background: #eceef1; border-radius: 2px;"></span>
+    </div>
+    <div style="position: absolute; left: 1074px; top: 536px; width: 96px; height: 32px; border-radius: 6px; border: 1px dashed #b4b5b6; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #606162;">+ Add page</div>
+
+    <div style="{{ toastStyle }}"><span style="width: 18px; height: 18px; border-radius: 50%; background: #1e9e5a; display: flex; align-items: center; justify-content: center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><div style="display: flex; flex-direction: column; gap: 1px;"><span style="font-size: 12.5px; font-weight: 800;">Published</span><span style="font-size: 11px; color: #606162;">Version 14 is live for all technicians</span></div></div>
+    <div style="{{ tokPop }}"><span style="font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #8b8c8d;">Merge field</span><span style="font-size: 13px; font-weight: 800; color: #0265dc;">Customer name</span><div style="display: flex; justify-content: space-between; font-size: 10.5px; color: #606162;"><span>Source</span><span style="color: #141414; font-weight: 700;">Customer › Name</span></div><div style="display: flex; justify-content: space-between; font-size: 10.5px; color: #606162;"><span>If empty</span><span style="color: #141414; font-weight: 700;">Valued customer</span></div></div>
+    <div style="{{ ghostStyle }}">
+      <sc-if value="{{ isBuild }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border-radius: 8px; background: #ffffff; border: 1.5px solid #0265dc; box-shadow: 0 14px 30px -10px rgba(2,101,220,0.45); font-size: 12.5px; font-weight: 700; color: #0265dc; white-space: nowrap;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c3-1 4-8 6-8s0 7 2 7 2-3 4-3 2 2 6 2"></path><path d="M3 21h18"></path></svg>Signature</div>
+      </sc-if>
+      <sc-if value="{{ isFields }}" hint-placeholder-val="{{ false }}">
+        <span style="display: inline-flex; align-items: center; height: 24px; padding: 0 9px; border-radius: 5px; background: #0265dc; color: #ffffff; font-size: 12px; font-weight: 700; white-space: nowrap; box-shadow: 0 12px 24px -8px rgba(2,101,220,0.55);">Job address</span>
+      </sc-if>
+    </div>
+    <div style="{{ cursorStyle }}">
+      <svg width="22" height="22" viewBox="0 0 22 22" style="{{ cursorInner }}"><path d="M2 1.6 19 8.9c.8.3.7 1.5-.2 1.7l-6.8 1.6c-.4.1-.7.4-.8.8L9.6 19.8c-.2.9-1.4 1-1.7.2L1.6 2c-.3-.7.4-1.5 1.1-1.1Z" fill="#141414" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"></path></svg>
+    </div>
+  </div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1000px&quot;,&quot;height&quot;:&quot;640px&quot;},&quot;scene&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;build&quot;,&quot;fields&quot;],&quot;default&quot;:&quot;build&quot;,&quot;tsType&quot;:&quot;\&quot;build\&quot; | \&quot;fields\&quot;&quot;}}">
+const BUILD = [
+  { d: 700, cur: [780, 640], mv: 700 },
+  { d: 1100, cur: [71, 468], hover: 1, mv: 1000 },
+  { d: 380, cur: [71, 468], hover: 1, press: 1, ghost: 1, mv: 200 },
+  { d: 1150, cur: [650, 512], press: 1, ghost: 1, mv: 1100 },
+  { d: 550, cur: [650, 512], press: 1, ghost: 1, ind: 1, mv: 200 },
+  { d: 1300, cur: [700, 545], drop: 1, sel: 1, mv: 500 },
+  { d: 1000, cur: [505, 222], drop: 1, mv: 900 },
+  { d: 2200, cur: [505, 222], drop: 1, selTok: 1, cam: [560, 280, 1.9], mv: 200 },
+  { d: 1100, cur: [942, 30], drop: 1, mv: 900 },
+  { d: 2200, cur: [942, 30], drop: 1, preview: 1, cam: [640, 300, 1.45], mv: 200 },
+  { d: 1000, cur: [1038, 28], drop: 1, preview: 1, mv: 800 },
+  { d: 300, cur: [1038, 28], drop: 1, preview: 1, press: 1, pub: 1, mv: 100 },
+  { d: 2200, cur: [980, 150], drop: 1, preview: 1, toast: 1, mv: 700 },
+  { d: 900, cur: [860, 650], drop: 1, mv: 900 }
+];
+const FIELDS = [
+  { d: 700, cur: [820, 620], mv: 700 },
+  { d: 1100, cur: [110, 288], hover: 1, mv: 1000 },
+  { d: 350, cur: [110, 288], hover: 1, press: 1, ghost: 1, mv: 200 },
+  { d: 1150, cur: [500, 239], press: 1, ghost: 1, ind: 1, mv: 1100 },
+  { d: 450, cur: [500, 239], press: 1, ghost: 1, ind: 1, mv: 200 },
+  { d: 1000, cur: [560, 266], fill: 1, mv: 400 },
+  { d: 1000, cur: [942, 30], fill: 1, mv: 900 },
+  { d: 2800, cur: [942, 30], fill: 1, preview: 1, mv: 200 },
+  { d: 700, cur: [867, 30], fill: 1, preview: 1, mv: 600 },
+  { d: 900, cur: [867, 30], fill: 1, mv: 200 }
+];
+const STILL = [{ d: 1e9, cur: [1300, 900], drop: 1, mv: 0 }];
+const FIELD_ROWS = [
+  ["Customer name", "Text"], ["Customer phone", "Phone"], ["Job address", "Address"], ["Job number", "ID"],
+  ["Technician", "Text"], ["Due date", "Date"], ["Invoice total", "Currency"], ["Payment link", "URL"]
+];
+const TOK = {
+  name: ["Customer name", "Maria Lopez"], addr: ["Job address", "1420 Oak Street, Austin TX"], phone: ["Customer phone", "(512) 555-0199"],
+  job: ["Job number", "#J-88412"], tech: ["Technician", "Daniel Kim"], due: ["Due date", "Nov 13, 2023"], total: ["Invoice total", "$450.86"]
+};
+const EASE = "cubic-bezier(.65,0,.35,1)";
+
+class Component extends DCLogic {
+  state = { step: 0, scale: 0.6 };
+  rootRef = (el) => { this._root = el; };
+  steps() { return this.props.scene === "fields" ? FIELDS : this.props.scene === "still" ? STILL : BUILD; }
+  componentDidMount() {
+    this._reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (this._reduced) this.setState({ step: 5 });
+    if (!this._root) return;
+    this._ro = new ResizeObserver((es) => { const w = es[0].contentRect.width; if (w) this.setState({ scale: w / 1200 }); });
+    this._ro.observe(this._root);
+    this._io = new IntersectionObserver((es) => {
+      this._vis = es[0].isIntersecting;
+      if (this._vis) this.tick(); else clearTimeout(this._t);
+    }, { threshold: 0.15 });
+    this._io.observe(this._root);
+  }
+  componentWillUnmount() { clearTimeout(this._t); this._ro && this._ro.disconnect(); this._io && this._io.disconnect(); }
+  tick() {
+    clearTimeout(this._t);
+    if (this._reduced) return;
+    const st = this.steps();
+    const s = st[this.state.step % st.length];
+    this._t = setTimeout(() => {
+      this.setState((p) => ({ step: (p.step + 1) % st.length }), () => { if (this._vis) this.tick(); });
+    }, s.d);
+  }
+  renderVals() {
+    const fields = this.props.scene === "fields";
+    const st = this.steps();
+    const s = st[this.state.step % st.length];
+    const [x, y] = s.cur;
+    const mv = (s.mv || 600) + "ms";
+    const sigOn = fields || !!s.drop;
+    const addrOn = !fields || !!s.fill;
+    const preview = !!s.preview;
+    const tok = {};
+    Object.keys(TOK).forEach((k) => {
+      tok[k] = {
+        text: preview ? TOK[k][1] : TOK[k][0],
+        style: preview
+          ? { display: "inline-flex", alignItems: "center", height: "17px", padding: "0", borderRadius: "4px", background: "rgba(224,237,255,0)", color: "#141414", fontWeight: k === "name" || k === "total" ? 800 : 600, whiteSpace: "nowrap", transition: "all .35s ease" }
+          : { display: "inline-flex", alignItems: "center", height: "17px", padding: "0 6px", borderRadius: "4px", background: "#e0edff", color: "#0265dc", fontWeight: 700, fontSize: "9.5px", whiteSpace: "nowrap", transition: "all .35s ease" }
+      };
+    });
+    const tab = (on) => ({ display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12.5px", fontWeight: on ? 700 : 600, color: on ? "#141414" : "#606162", background: on ? "#ffffff" : "transparent", borderRadius: "4px", boxShadow: on ? "0 1px 2px rgba(0,0,0,0.12)" : "none" });
+    const seg = (on) => ({ ...tab(on), fontSize: "12.5px", transition: "all .25s ease" });
+    const [cx, cy, z] = s.cam || [600, 380, 1];
+    const tx = Math.min(0, Math.max(1200 - 1200 * z, 600 - cx * z)), ty = Math.min(0, Math.max(760 - 760 * z, 380 - cy * z));
+    if (s.selTok) tok.name.style = { ...tok.name.style, boxShadow: "0 0 0 2px #0265dc", background: "#d4e6ff" };
+    return {
+      camStyle: { position: "absolute", left: 0, top: 0, width: "1200px", height: "760px", transformOrigin: "0 0", transform: `translate(${tx}px, ${ty}px) scale(${z})`, transition: "transform 1.1s cubic-bezier(.65,0,.35,1)" },
+      pubStyle: { position: "absolute", left: "996px", top: "12px", height: "32px", padding: "0 16px", borderRadius: "6px", background: s.pub ? "#0150b0" : "#0265dc", color: "#ffffff", fontSize: "13px", fontWeight: 700, display: "inline-flex", alignItems: "center", transform: s.pub ? "scale(.95)" : "none", transition: "all .15s ease" },
+      toastStyle: { position: "absolute", left: "880px", top: "66px", zIndex: 18, display: "flex", alignItems: "center", gap: "10px", padding: "10px 14px", borderRadius: "10px", background: "#ffffff", boxShadow: "0 18px 40px -14px rgba(16,16,22,0.35), 0 0 0 1px rgba(0,0,0,0.05)", opacity: s.toast ? 1 : 0, transform: s.toast ? "none" : "translateY(-8px)", transition: "all .35s cubic-bezier(.2,.8,.2,1)", pointerEvents: "none" },
+      tokPop: { position: "absolute", left: "447px", top: "236px", zIndex: 17, width: "170px", display: "flex", flexDirection: "column", gap: "5px", padding: "10px 12px", borderRadius: "8px", background: "#ffffff", boxShadow: "0 14px 30px -12px rgba(16,16,22,0.35), 0 0 0 1px rgba(0,0,0,0.05)", opacity: s.selTok ? 1 : 0, transform: s.selTok ? "none" : "translateY(-6px)", transition: "all .3s ease .25s", pointerEvents: "none" },
+      rootRef: this.rootRef,
+      isBuild: !fields, isFields: fields,
+      searchPh: fields ? "Search fields" : "Search blocks",
+      sectionLabel: fields ? "Merge fields" : "Blocks",
+      tabBlocks: tab(!fields), tabFields: tab(fields),
+      editBtn: seg(!preview), prevBtn: seg(preview),
+      stageStyle: { position: "absolute", left: 0, top: 0, width: "1200px", height: "760px", transform: `scale(${this.state.scale})`, transformOrigin: "0 0" },
+      sigTile: { border: "1px solid " + (s.hover && !fields ? "#0265dc" : "#dfe0e1"), background: s.hover && !fields ? "#e0edff" : "#ffffff", color: s.hover && !fields ? "#0265dc" : "#606162", borderRadius: "8px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "6px", fontSize: "12px", fontWeight: 600, transform: s.press && !fields ? "scale(.96)" : "none", transition: "all .2s ease" },
+      fieldRows: FIELD_ROWS.map(([label, type], i) => {
+        const hot = i === 2 && s.hover;
+        return { label, type, style: { height: "36px", borderRadius: "6px", border: "1px solid " + (hot ? "#0265dc" : "#ececed"), background: hot ? "#e0edff" : "#ffffff", display: "flex", alignItems: "center", gap: "10px", padding: "0 10px", boxSizing: "border-box", transform: hot && s.press ? "scale(.97)" : "none", transition: "all .2s ease" } };
+      }),
+      tok,
+      addrSlot: { display: "grid", alignItems: "center", height: addrOn || s.ind ? "20px" : "0px", overflow: "hidden", transition: "height .4s cubic-bezier(.2,.8,.2,1)" },
+      addrPh: { gridArea: "1 / 1", height: "17px", width: "128px", borderRadius: "4px", border: "1.5px dashed #0265dc", background: "rgba(2,101,220,0.06)", color: "#0265dc", fontSize: "9px", fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", boxSizing: "border-box", opacity: s.ind && !addrOn ? 1 : 0, transition: "opacity .25s ease" },
+      addrChip: { gridArea: "1 / 1", display: "flex", alignItems: "center", opacity: addrOn ? 1 : 0, transform: addrOn ? "none" : "translateY(4px)", transition: "opacity .35s ease, transform .35s ease" },
+      indStyle: { position: "relative", height: "2px", margin: "-8px 0 -8px", background: "#0265dc", borderRadius: "1px", opacity: s.ind && !fields ? 1 : 0, transition: "opacity .2s ease" },
+      sigSlot: { maxHeight: sigOn ? "90px" : "0px", opacity: sigOn ? 1 : 0, padding: "4px", margin: "-4px", overflow: "hidden", transition: sigOn ? "max-height .5s cubic-bezier(.2,.8,.2,1), opacity .35s ease .08s" : "max-height .45s ease .15s, opacity .3s ease" },
+      sigBox: { position: "relative", display: "flex", gap: "20px", alignItems: "flex-end", padding: "10px 12px", borderRadius: "5px", background: s.sel ? "rgba(2,101,220,0.03)" : "transparent", boxShadow: s.sel ? "0 0 0 1.5px #0265dc" : "0 0 0 1.5px rgba(2,101,220,0)", transition: "all .3s ease" },
+      selTools: { position: "absolute", right: "6px", top: "6px", display: "flex", gap: "8px", alignItems: "center", height: "20px", padding: "0 8px", borderRadius: "4px", background: "#141414", opacity: s.sel ? 1 : 0, transition: "opacity .25s ease" },
+      thumbSig: { height: "8px", width: "55%", borderBottom: "1px solid #141414", opacity: sigOn ? 1 : 0, transition: "opacity .4s ease" },
+      ghostStyle: { position: "absolute", left: 0, top: 0, zIndex: 19, pointerEvents: "none", opacity: s.ghost ? 1 : 0, transform: `translate3d(${x - 22}px, ${y - 16}px, 0) rotate(${s.ghost ? -3 : 0}deg) scale(${s.ghost ? 1 : 0.9})`, transition: `transform ${mv} ${EASE}, opacity .2s ease` },
+      cursorStyle: { position: "absolute", left: 0, top: 0, zIndex: 20, pointerEvents: "none", transform: `translate3d(${x}px, ${y}px, 0)`, transition: `transform ${mv} ${EASE}` },
+      cursorInner: { display: "block", overflow: "visible", transform: s.press ? "scale(.85)" : "scale(1)", transformOrigin: "2px 2px", transition: "transform .15s ease", filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.25))" }
+    };
+  }
+}
+</script>
+</body>
+</html>
